@@ -53,6 +53,10 @@ body header>h1 {
     padding: 10px;
 }
 
+#search-button:hover {
+    background-color: #79A228;
+}
+
 main
 {
     background-color: white;

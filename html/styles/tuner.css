@@ -7,19 +7,14 @@
     height: 40px;
     text-align: center;
     vertical-align: center;
-
 }
+
 .left, .right {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-/* .left {
-    left: 0;
-}
-.right {
-    right: 0;
-} */
+
 .tuner {
     padding: 5px;
     display: flex;
@@ -27,9 +22,11 @@
     width: 100%;
     justify-content: center;
 }
+
 .space {
     height: 32px;
 }
+
 #guitarImage {
     background-image: url(../images/tuner.png);
     height: 243px;
