@@ -102,7 +102,7 @@ h2 {
 aside {
     flex: 30%;
     background-color: #68C468;
-    padding: 20px;
+    padding: 10px;
     position: relative;
     box-shadow: 0 0 5px black;
 }
@@ -121,11 +121,11 @@ aside a:hover {
 
 main {
     flex: 70%;
-    padding: 20px;
+    padding: 10px;
 }
 
 footer {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     color: white;
     background-color: rgba(0,0,0,0.4);
