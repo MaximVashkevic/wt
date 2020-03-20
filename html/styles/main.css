@@ -14,15 +14,21 @@ body {
 }
 
 body header {
-    text-align: center;
-    background-color: forestgreen;
     color: white;
     padding: 5px;
+    background-image: url(../images/header.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: #3C5A00;
+    height: 100px;
 }
 
 body header>h1 {
     margin: 0;
     padding: 10px;
+    text-shadow: 3px 2px 5px black;
+    font-style: italic;
+    text-shadow: 3px 2px 5px black;
 }
 
 .search-container {
@@ -31,12 +37,15 @@ body header>h1 {
     text-align: center;
     display: flex;
     justify-content: right;
-    flex-grow: 2;
+    flex-basis: 30%;
+    margin-left: auto;
 }
 
 #search-input {
     border: none;
     padding: 10px;
+    max-width: 300px;
+    width: 100%;
 }
 
 #search-button {
@@ -121,7 +130,7 @@ footer {
     z-index: 2;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
     nav, .row{
         flex-direction: column;
     }
@@ -130,5 +139,6 @@ footer {
     }    
     .search-container {
         justify-content: center;
+        margin-left: initial;
     }
 }
