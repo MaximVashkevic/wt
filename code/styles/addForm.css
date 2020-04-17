@@ -1,50 +1,50 @@
 .col-25 {
-    width: 25%;
-    float: left;
+  width: 25%;
+  float: left;
 }
 
 .col-75 {
-    width: 75%;
-    float: left;
+  width: 75%;
+  float: left;
 }
 
 .add-form-inputs {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #4CAF50;
-    box-sizing: border-box;
-    resize: vertical;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #4CAF50;
+  box-sizing: border-box;
+  resize: vertical;
 }
 
 textarea.add-form-inputs {
-    height: 400px;
+  height: 400px;
 }
 
 .form-row {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .form-row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 #add-button {
-    padding: 12px 20px;
-    float: right;
+  padding: 12px 20px;
+  float: right;
 }
 
 label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
 }
 
 @media screen and (max-width: 600px) {
-    .col-25,
-    .col-75,
-    .form-row {
-        width: 100%;
-        margin-top: 0;
-    }
+  .col-25,
+  .col-75,
+  .form-row {
+    width: 100%;
+    margin-top: 0;
+  }
 }
