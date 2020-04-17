@@ -33,7 +33,7 @@ body header>h1 {
 
 .search-container {
     padding: 0;
-    border: none;   
+    border: none;
     text-align: center;
     display: flex;
     justify-content: right;
@@ -48,19 +48,30 @@ body header>h1 {
     width: 100%;
 }
 
-#search-button {
+input:focus,
+textarea:focus {
+    outline-color: #4E9393;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
     border: none;
     padding: 10px;
 }
 
-main
-{
+.button:hover {
+    background-color: #79A228;
+}
+
+main {
     background-color: white;
 }
 
-nav>a{
+nav>a {
     color: white;
-    padding: 10px;    
+    padding: 10px;
     text-align: center;
     text-decoration: none;
 }
@@ -79,8 +90,7 @@ nav>a:hover {
     color: black;
 }
 
-.active
-{
+.active {
     background-color: #4E9393;
 }
 
@@ -98,14 +108,14 @@ h2 {
 aside {
     flex: 30%;
     background-color: #68C468;
-    padding: 20px;
+    padding: 10px;
     position: relative;
     box-shadow: 0 0 5px black;
 }
 
 aside a {
     color: black;
-    padding: 5px;    
+    padding: 5px;
     text-align: left;
     text-decoration: none;
     display: block
@@ -117,26 +127,27 @@ aside a:hover {
 
 main {
     flex: 70%;
-    padding: 20px;
+    padding: 10px;
 }
 
 footer {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     color: white;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     position: relative;
     box-shadow: 0 0 5px black;
     z-index: 2;
 }
 
 @media screen and (max-width: 720px) {
-    nav, .row{
+    nav,
+    .row {
         flex-direction: column;
     }
     nav {
         justify-content: center;
-    }    
+    }
     .search-container {
         justify-content: center;
         margin-left: initial;

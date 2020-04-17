@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Аккорды.by</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/tuner.css">
     <link rel="icon" href="favicon.png">
 </head>
 
@@ -17,18 +18,32 @@
             </h1>
         </header>
         <nav>
-            <a class="active" href="index.html">Главная</a>
+            <a href="index.html">Главная</a>
             <a href="technics.html">Приёмы игры</a>
-            <a href="tuning.html">Настройка гитары</a>
+            <a class="active" href="tuning.html">Настройка гитары</a>
             <a href="add.html">Добавить подбор</a>
             <form class="search-container" name="search" autocomplete="off">
                 <input id="search-input" type="search" placeholder="Поиск" size="5">
-                <input id="search-button" type="submit" value="Искать">
+                <input id="search-button" class="button" type="submit" value="Искать">
             </form>
         </nav>
         <div class="row">
             <main>
-
+                <section class="tuner">
+                    <div class="left">
+                        <div class="space"></div>
+                        <div class="note">D</div>
+                        <div class="note">A</div>
+                        <div class="note">E</div>
+                    </div>
+                    <div id="guitarImage"></div>
+                    <div class="right">
+                        <div class="space"></div>
+                        <div class="note">G</div>
+                        <div class="note">B</div>
+                        <div class="note">E</div>
+                    </div>
+                </section>
             </main>
             <aside>
                 <h2>Новые подборы</h2>
