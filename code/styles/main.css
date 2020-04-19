@@ -23,12 +23,24 @@ body {
   background-color: #3C5A00;
   height: 100px;
 }
+
 #main-header>h1 {
   margin: 0;
   padding: 10px;
   text-shadow: 3px 2px 5px black;
   font-style: italic;
   text-shadow: 3px 2px 5px black;
+  color: #fff;
+}
+
+article h1 {
+  margin: 10px;
+}
+
+#play-settings {
+  border-bottom: 1px solid #0c700c;
+  border-top: 1px solid #0c700c;
+  padding: 5px 0;
 }
 
 .search-container {
@@ -48,8 +60,7 @@ body {
   width: 100%;
 }
 
-input:focus,
-textarea:focus {
+input:focus, textarea:focus {
   outline-color: #4E9393;
 }
 
@@ -69,11 +80,14 @@ main {
   background-color: white;
 }
 
+a {
+  text-decoration: none;
+}
+
 nav>a {
   color: white;
   padding: 10px;
   text-align: center;
-  text-decoration: none;
 }
 
 nav {
@@ -96,6 +110,12 @@ nav>a:hover {
 
 h2 {
   margin: 0;
+  font-weight: normal;
+  color: #0C700C;
+}
+
+h1 {
+  color: #4E9393;
 }
 
 .row {
@@ -113,15 +133,18 @@ aside {
   box-shadow: 0 0 5px black;
 }
 
+aside h2 {
+  color: #fff;
+}
+
 aside a {
   color: black;
   padding: 5px;
   text-align: left;
-  text-decoration: none;
   display: block
 }
 
-aside a:hover {
+a:hover {
   text-decoration: underline;
 }
 
@@ -151,14 +174,25 @@ img {
   padding: 10px;
 }
 
-ul
-{
+ul {
   padding: 10px 10px 10px 20px;
+  margin: 0;
+  list-style: none;
 }
 
-@media screen and (max-width: 720px) {
-  nav,
-  .row {
+.play-setting {
+  display: inline-block;
+}
+
+.btn-setting {
+  border: none;
+  background: #4E9393;
+  margin: 2px;
+  color: #fff;
+}
+
+@media screen and (max-width: 740px) {
+  nav, .row {
     flex-direction: column;
   }
   nav {
@@ -168,4 +202,19 @@ ul
     justify-content: center;
     margin-left: initial;
   }
+}
+
+ul {
+  margin: 0;
+}
+
+.main-section {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #0c700c;
+}
+
+.main-section a {
+  color: #4E9393;
 }
