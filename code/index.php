@@ -1,25 +1,9 @@
 <?php
 
-require_once('modules/renderer.php');
-require_once('modules/resolver.php');
+require_once 'modules/ViewFactory.php';
 
-use modules\{Renderer, Resolver};
+use modules\ViewFactory;
+$request = $_GET['request'] ?? 'index';
 
-$request = $_GET['request'];
-$resolver = new Resolver(
-    $serverRoot = $_SERVER['DOCUMENT_ROOT'],
-    $templatesDir = 'templates',
-    $notFoundTempate = '404.phtml'
-);
-$renderer = new Renderer(
-    $links = array(
-        '/' => 'Главная',
-        '/technics' => 'Приёмы игры',
-        '/tuning' => 'Настройка гитары',
-        '/add' => 'Добавить подбор'
-    ),
-    $serverRoot = $_SERVER['DOCUMENT_ROOT'],
-    $templateFile = 'template.php',
-);
-$path = $resolver->resolve($request);
-$renderer->render($path);
+$view = ViewFactory::createView($request, array('pageTitle' => 'abc', 1,3,4,5,6,7,7));
+$view->render();
