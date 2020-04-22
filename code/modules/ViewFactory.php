@@ -9,8 +9,9 @@ require_once 'views/TechnicsView.php';
 require_once 'views/TuningView.php';
 require_once 'views/SongView.php';
 require_once 'views/NotFoundView.php';
+require_once 'views/LabView.php';
 
-use views\{AddView, IndexView, NotFoundView, SongView, TechnicsView, TuningView};
+use views\{AddView, IndexView, NotFoundView, SongView, TechnicsView, TuningView, LabView};
 
 class ViewFactory
 {
@@ -27,6 +28,8 @@ class ViewFactory
                 return new TuningView($values);
             case 'song':
                 return new SongView($values);
+            case 'lab':
+                return new LabView($values);
         }
         return new NotFoundView($values);
     }

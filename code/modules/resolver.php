@@ -27,6 +27,9 @@ class Resolver
         $songManager = SongManager::getInstance();
         $values['newSongs'] = $songManager->getNewSongs(self::$ITEMS_COUNT);
         switch ($request) {
+            case 'lab':
+                $values = [];
+                return 'lab';
             case 'index':
             case '':
             {
