@@ -36,12 +36,19 @@
     if (isset($_GET['array']))
     {
         $array = explode(',', $_GET['array']);
-        echo '<h3>Исходный массив</h3>';
-        echo '<p>' . implode(', ', $array) . '</p>';
-        $resultArray = ArrayHelper::uniqueElements($array);
-        echo '<h3>Результирующий массив</h3>';
-        echo '<p>' . implode(', ', $resultArray) . '</p>';
-        echo '<hr>';
+        if (strlen($_GET['array']) == 0)
+        {
+            echo '<p>Был получен пустой массив. Повторите ввод.</p>';
+        }
+        else
+        {
+            echo '<h3>Исходный массив</h3>';
+            echo '<p>' . implode(', ', $array) . '</p>';
+            $resultArray = ArrayHelper::uniqueElements($array);
+            echo '<h3>Результирующий массив</h3>';
+            echo '<p>' . implode(', ', $resultArray) . '</p>';
+            echo '<hr>';
+        }
     }
 ?>
 <form action="/lab" method="get" name="labform">
