@@ -218,3 +218,91 @@ ul {
 .main-section a {
   color: #4E9393;
 }
+
+/* add form */
+.col-25 {
+  width: 25%;
+  float: left;
+}
+
+.col-75 {
+  width: 75%;
+  float: left;
+}
+
+.add-form-inputs {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #4CAF50;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+textarea.add-form-inputs {
+  height: 400px;
+}
+
+.form-row {
+  margin-top: 6px;
+}
+
+.form-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#add-button {
+  padding: 12px 20px;
+  float: right;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  .form-row {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* tuner */
+.note {
+  border: 1px solid;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  font: 2em bold arial, sans-serif;
+  height: 40px;
+  margin: 4px;
+  text-align: center;
+  vertical-align: center;
+  width: 40px;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tuner {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.space {
+  height: 32px;
+}
+
+#guitarImage {
+  background-image: url(../images/tuner.png);
+  height: 243px;
+  width: 173px;
+}
