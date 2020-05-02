@@ -31,7 +31,7 @@
 <div class="wrapper">
     <form action="/" method="post" enctype="multipart/form-data" name="form">
         <label for="file">Выберите файл:</label>
-        <input type="file" size="10" name="file">
+        <input type="file" size="10" name="file" required>
         <br><input type="submit" value="Отправить">
     </form>
     <?php
@@ -81,7 +81,6 @@ END;
         printTable($fileContents, $parsedFile);
     }
     ?>
-
 </div>
 </body>
 </html>
