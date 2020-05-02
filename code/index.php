@@ -1,2 +1,3 @@
 <?php
-phpinfo();
+
+require_once 'index.phtml';
