@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>Календарь</title>
+    <style>
+        .wrapper {
+            padding: 10px;
+        }
+
+        h3, p, form {
+            margin: 10px;
+        }
+
+        * {
+            font: 20px serif;
+            box-sizing: border-box;
+        }
+
+        input, label {
+            margin: 5px 0;
+        }
+
+        input, select {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <?php
+
+    use function calendar\academicYearCalendarToString;
+    use const calendar\MAX_YEAR;
+    use const calendar\MIN_YEAR;
+
+    if (isset($_GET['year']) && isset($_GET['course'])) {
+        $year = intval($_GET['year']);
+        $course = intval($_GET['course']);
+        $validYear = is_int($year) && ($year >= MIN_YEAR) && ($year <= MAX_YEAR);
+        $validCourse = is_int($course) && $course >= 1 && $course <= 4;
+        if (!$validCourse) {
+            unset($course);
+            echo '<p>Некорректный курс. Введите целое число от 1 до 4.</p>';
+        }
+        if (!$validYear) {
+            unset($year);
+            echo '<p>Некорректный год. Введите целое число от 1970 до 3000.</p>';
+        }
+    }
+    ?>
+    <form action="/" method="get" name="calendarForm">
+        <label for="course">Курс:</label>
+        <select name="course" id="course">
+            <?php
+            for ($i = 1; $i <= 4; $i++) {
+                echo '<option value="' . $i . '"';
+                if ($i == $course) {
+                    echo ' selected';
+                }
+                echo '>' . $i . '</option>';
+            }
+            ?>
+        </select>
+        <label for="year">Год:</label>
+        <input type="number" min="<?= MIN_YEAR ?>>" max="<?= MAX_YEAR ?>>" step="1" name="year" id="year" required
+               value="<?= $year ?>">
+        <br><input type="submit" value="Отправить">
+        <?php
+        if ($validYear && $validCourse) {
+            echo '<br><input type="submit" formtarget="_blank" formaction="/download.php" value="Скачать">';
+        }
+        ?>
+    </form>
+    <?php
+    if ($validYear && $validCourse) {
+        echo academicYearCalendarToString($year, $course);
+    }
+    ?>
+</div>
+</body>
+</html>
