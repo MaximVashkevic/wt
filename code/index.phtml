@@ -3,29 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Регулярные выражения</title>
-    <style>
-        .wrapper {
-            padding: 10px;
-        }
-
-        h3, p, form {
-            margin: 10px;
-        }
-
-        * {
-            font: 20px serif;
-            box-sizing: border-box;
-        }
-
-        input, label {
-            margin: 5px 0;
-        }
-
-        input, select {
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
 <div class="wrapper">
@@ -36,44 +15,9 @@
     </form>
     <?php
 
-    use function DateParser\parseDates;
+    require_once "modules/dateParser.php";
 
-    require_once 'modules/dateParser.php';
-
-    function printTable($source, $modified)
-    {
-        echo <<<'END'
-<style>
-        .compare {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        .compare__item {
-            width: auto;
-            padding: 5px;
-            margin: 5px;
-            border: 1px solid lightgoldenrodyellow;
-        }
-        .date__color_red
-        {
-            color: red;
-        };
-        }
-        @media only screen and (max-width: 600px) {
-            .compare {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-END;
-        echo '<div class="compare"><pre class="compare__item">';
-        echo $source;
-        echo '</pre>';
-        echo '<pre class="compare__item">';
-        echo $modified;
-        echo '</pre>';
-        echo '</div>';
-    }
+    use function DateParser\{parseDates, printTable};
 
     if (isset($_FILES['file'])) {
         if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
