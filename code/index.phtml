@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visits history</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<?php
+
+use Session\SessionInfoPrinter;
+
+require_once 'SessionInfoPrinter.php';
+
+SessionInfoPrinter::PrintHistory($sessionHistoryRegistry->GetHistory());
+
+?>
+<form method="post">
+    <input type="hidden" name="reset">
+    <input class="button" type="submit" value="Reset">
+</form>
+</body>
+</html>

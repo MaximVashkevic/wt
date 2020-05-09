@@ -1,9 +1,13 @@
 <?php
-session_start();
-$_SESSION['visits'][] = new DateTime();
 
-foreach ($_SESSION['visits'] as $visit)
-{
-    echo $visit->format('r') . '<br>';
+use Session\SessionHistoryRegistry;
+
+require_once 'SessionHistoryRegistry.php';
+
+$sessionHistoryRegistry = new SessionHistoryRegistry();
+
+if (isset($_POST['reset'])) {
+    $sessionHistoryRegistry->Clear();
 }
-echo 'Total ' . count($_SESSION['visits']) . ' visits';
+
+require_once 'index.phtml';

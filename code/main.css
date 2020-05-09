@@ -1,0 +1,31 @@
+.history {
+    border-collapse: collapse;
+}
+
+.history__cell, .history__header, .history__total {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.history__entry:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.history__entry:hover {
+    background-color: #ddd;
+}
+
+.history__header {
+    padding: 12px 0;
+    background-color: #4caf50;
+    color: white;
+}
+
+.history__total {
+    background-color: #68ea6d;
+}
+
+.button {
+    padding: 5px;
+    margin: 5px 0;
+}
