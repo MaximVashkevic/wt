@@ -1,21 +1,10 @@
 <?php
 
-$host = 'db';
-$db = 'users';
-$user = 'root';
-$password = 'password';
-$charset = 'utf8';
+require_once 'mailHelper.php';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
-$pdo = new PDO($dsn, $user, $password, $options);
-$stmt = $pdo->query('select * from users;');
-
-while ($row = $stmt->fetch())
+if (isset($_POST['subject']) && isset($_POST['message']))
 {
-    echo $row['email'];
+    send($_POST['subject'], $_POST['message']);
 }
+
+require_once 'index.html';

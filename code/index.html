@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <title>Mail</title>
+</head>
+<body>
+<form class="mail-form" method="post">
+    <div class="mail-form__row">
+        <div class="mail-form__label-box">
+            <label class="mail-form__label" for="subject">Subject</label>
+        </div>
+        <div class="mail-form__input-box">
+            <input class="mail-form__input mail-form__input_type_input" type="text" id="subject" name="subject"
+                   placeholder="Enter subject.." required>
+        </div>
+    </div>
+    <div class="mail-form__row">
+        <div class="mail-form__label-box">
+            <label class="mail-form__label" for="message">Message</label>
+        </div>
+        <div class="mail-form__input-box">
+            <textarea class="mail-form__input mail-form__input_type_message" id="message" name="message" required></textarea>
+        </div>
+    </div>
+    <div class="mail-form__row">
+        <input class="mail-form__button mail-form__button_type_submit" type="submit" value="Send">
+    </div>
+</form>
+</body>
+</html>
