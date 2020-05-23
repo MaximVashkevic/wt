@@ -1,6 +1,6 @@
 <?php
 
-function findAverageMark(&$students)
+function findAverageMark($students)
 {
     foreach ($students as $name => $info) {
         $average = 0;
@@ -10,9 +10,10 @@ function findAverageMark(&$students)
         $average = $average / count($info['marks']);
         $students[$name]['average'] = $average;
     }
+    return $students;
 }
 
-function findSubjectsMatching(&$students, $function, $conditionName)
+function findSubjectsMatching($students, $function, $conditionName)
 {
     foreach ($students as $name => $info) {
         $conditionMark = $function($info['marks']);
@@ -23,6 +24,7 @@ function findSubjectsMatching(&$students, $function, $conditionName)
             }
         }
     }
+    return $students;
 }
 
 function printTable($students)
